@@ -17,8 +17,8 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get install -y mariadb-server
-        sudo systemctl enable mariadb-server
-        sudo systemctl start mariadb-server
+        sudo systemctl enable mariadb
+        sudo systemctl start mariadb
 
     - name: Build Project
       run: |
