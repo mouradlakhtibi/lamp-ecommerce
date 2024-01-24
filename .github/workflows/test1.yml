@@ -1,0 +1,31 @@
+name: Build on Ubuntu
+
+on:
+  push:
+    branches:
+      - test-br
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Install Dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y mariadb-server
+        sudo systemctl enable mariadb-server
+        sudo systemctl start mariadb-server
+
+    - name: Build Project
+      run: |
+        sudo ufw enable 
+        sudo ufw allow 3306
+        sudo service ufw restart
+        
+
+
+
