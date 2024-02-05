@@ -13,7 +13,7 @@ jobs:
     - name: Checkout Repository
       uses: actions/checkout@v4
       with:
-        path: /var/www/html/
+        path: $GITHUB_WORKSPACE/var/www/html/
 
     - name: Install Dependencies
       run: |
