@@ -51,6 +51,7 @@ jobs:
         sudo apt-get install php libapache2-mod-php php-mysql -y
         sudo ufw allow 'Apache Full'
         sudo sed -i 's/index.html/index.php/g' /etc/apache2/apache2.conf
+        sudo systemctl start apache2
         curl http://localhost
      
 
