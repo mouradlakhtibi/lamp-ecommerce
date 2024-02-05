@@ -12,6 +12,8 @@ jobs:
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v4
+      with:
+        path: /var/www/html/
 
     - name: Install Dependencies
       run: |
@@ -42,13 +44,14 @@ jobs:
         
         EOF
         sudo mariadb  < db-load-script.sql   
-    - name: Deploy and Configure Web
+
+    - name: Deploy and Configure Web na and upload content
       run: |
         sudo apt-get update
         sudo apt-get install php libapache2-mod-php php-mysql -y
         sudo ufw allow 'Apache Full'
-
-          
-
+        sudo sed -i 's/index.html/index.php/g' /etc/apache2/apache2.conf
+        curl http://localhost
+     
 
 

@@ -1,4 +1,6 @@
 .DS_Store
 .idea/
-/deploy-vagrant-ansible/virtualbox.box
+/deploy-vagrant-ansible/
+.github/workflows
+
 
