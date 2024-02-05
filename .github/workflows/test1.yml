@@ -27,8 +27,8 @@ jobs:
         sudo service ufw restart
     - name: config dattabase
       run: |
-        sudo mariadb CREATE DATABASE ecomdb;
-        sudo  mariadb  GRANT ALL ON *.* TO 'admin'@'localhost' IDENTIFIED BY 'dbadminpassW23' WITH GRANT OPTION; 
+        sudo mariadb -e  'CREATE DATABASE ecomdb;'
+        sudo  mariadb   -e "GRANT ALL ON *.* TO 'admin'@'localhost' IDENTIFIED BY 'dbadminpassW23' WITH GRANT OPTION;"" 
          
 
 
