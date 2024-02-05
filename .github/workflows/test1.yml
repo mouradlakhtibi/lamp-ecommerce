@@ -27,9 +27,8 @@ jobs:
         sudo service ufw restart
     - name: config dattabase
       run: |
-        sudo  mariadb
-        GRANT ALL ON *.* TO 'admin'@'localhost' IDENTIFIED BY 'dbadminpassW23' WITH GRANT OPTION;   
-        
+        sudo  mariadb GRANT ALL ON *.* TO 'admin'@'localhost' IDENTIFIED BY 'dbadminpassW23' WITH GRANT OPTION; 
+         
 
 
 
