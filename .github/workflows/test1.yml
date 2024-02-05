@@ -11,7 +11,7 @@ jobs:
 
     steps:
     - name: Checkout Repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
 
     - name: Install Dependencies
       run: |
@@ -25,6 +25,10 @@ jobs:
         sudo ufw enable 
         sudo ufw allow 3306
         sudo service ufw restart
+    - name: config dattabase
+      run: |
+        sudo  mariadb
+        GRANT ALL ON *.* TO 'admin'@'localhost' IDENTIFIED BY 'dbadminpassW23' WITH GRANT OPTION;   
         
 
 
